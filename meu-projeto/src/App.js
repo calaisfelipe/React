@@ -1,14 +1,17 @@
 //import logo from './logo.svg';
 import './App.css';
-import Pessoa from './components/Pessoa';
-import FragmentComponent from './components/FragmentComponent';
+import Evento from './components/Evento';
+import Form from './components/Form';
 
 function App() {
 
   return (
     <div className="App">
-      <Pessoa nome="felipe"  foto="https://via.placeholder.com/150" profissao="programador" />
-      <FragmentComponent/>
+      <Evento numero="1" />
+      <Form />
+
+
+      
     </div>
       
   );
