@@ -1,0 +1,33 @@
+
+.footerContainer{
+    padding-top: .5em;
+    text-align: center;
+    height: 40px;
+    background-color: #333;
+    color:#fff;
+    
+}
+
+.pAnimation{
+    animation: ladoalado 2s ease-in-out alternate infinite;
+}
+
+@keyframes ladoalado {
+
+    0%{transform: translateX(25px);
+
+    }
+    
+    25%{transform: translateX(0px);
+
+    }
+
+    75%{transform: translateX(-25px);
+
+
+    }
+
+    100%{transform: translateX(-0px);
+
+    }
+}
