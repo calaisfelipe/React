@@ -4,7 +4,7 @@ import styles from './Navbar.module.css'
 function Navbar(){
     return(
 
-        <div className={styles.NavbarContainer}>
+        <nav className={styles.NavbarContainer}>
             <div>
                 <img src="../src/img/costs_logo.png" alt="Costs Logo" />
             </div>
@@ -12,12 +12,12 @@ function Navbar(){
             <div>
                 <ul>
                 <li><Link to="/" >Home</Link></li>
-                <li><Link to="/newproject" >Novo Projeto</Link></li>
-                <li><Link to="/contact" >Contato</Link></li>
+                <li><Link to="/projects" >Projetos</Link></li>    
                 <li><Link to="/company" >Empresa</Link></li>
+                <li><Link to="/contact" >Contato</Link></li>
                       </ul>
             </div>
-        </div>
+        </nav>
     )
 }
 

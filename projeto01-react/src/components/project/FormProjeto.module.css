@@ -1,0 +1,50 @@
+
+
+form{
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: .5em;
+}
+
+
+.formItem{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap:5px
+
+}
+
+input, select{
+    background-color: rgb(230, 208, 208);
+    padding: 0 10px;
+    width: 230px;
+    height: 30px;
+    border: none;
+
+}
+
+label{font-weight: bold;}
+
+.divBtnCriarProjeto{
+    margin-top: .5em;
+    width: 100%;
+    text-align: center;
+    
+}
+
+.btnCriarProjeto{
+    background-color: #222;
+    color: #fff;
+    width: 120px;
+    cursor: pointer;
+    
+}
+
+.btnCriarProjeto:hover{
+    color: #ffbb33;
+    
+}
