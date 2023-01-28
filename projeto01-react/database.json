@@ -1,0 +1,143 @@
+{
+  "projects": [
+    {
+      "projectName": "asdas",
+      "budget": "3000",
+      "category": {
+        "id": "2",
+        "name": "desenvolvimento"
+      },
+      "costs": 0,
+      "services": [],
+      "id": 1
+    },
+    {
+      "projectName": "testesad",
+      "budget": "3222",
+      "category": {
+        "id": "2",
+        "name": "desenvolvimento"
+      },
+      "costs": 0,
+      "services": [],
+      "id": 2
+    },
+    {
+      "projectName": "teste",
+      "budget": "32222",
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      },
+      "costs": 0,
+      "services": [],
+      "id": 3
+    },
+    {
+      "projectName": "sadas",
+      "budget": "3232",
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      },
+      "costs": 0,
+      "services": [],
+      "id": 4
+    },
+    {
+      "projectName": "blabla",
+      "budget": "3000",
+      "category": {
+        "id": "4",
+        "name": "Planejamento"
+      },
+      "costs": 0,
+      "services": [],
+      "id": 5
+    },
+    {
+      "projectName": "teste",
+      "budget": "3123",
+      "category": {
+        "id": "2",
+        "name": "desenvolvimento"
+      },
+      "costs": 0,
+      "services": [],
+      "id": 6
+    },
+    {
+      "projectName": "lalala",
+      "budget": "3000",
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      },
+      "costs": 0,
+      "services": [],
+      "id": 7
+    },
+    {
+      "projectName": "teste",
+      "budget": "3000",
+      "category": {
+        "id": "2",
+        "name": "desenvolvimento"
+      },
+      "costs": 0,
+      "services": [],
+      "id": 8
+    },
+    {
+      "projectName": "felipe",
+      "budget": "9000",
+      "category": {
+        "id": "3",
+        "name": "Design"
+      },
+      "costs": 0,
+      "services": [],
+      "id": 9
+    },
+    {
+      "projectName": "12312",
+      "budget": "123123",
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      },
+      "costs": 0,
+      "services": [],
+      "id": 10
+    },
+    {
+      "projectName": "12312",
+      "budget": "12312",
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      },
+      "costs": 0,
+      "services": [],
+      "id": 11
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Infra"
+    },
+    {
+      "id": 2,
+      "name": "desenvolvimento"
+    },
+    {
+      "id": 3,
+      "name": "Design"
+    },
+    {
+      "id": 4,
+      "name": "Planejamento"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+.divBtnCriarProjeto{
+    margin-top: .5em;
+    width: 100%;
+    text-align: center;
+    
+}
+
+.btnCriarProjeto{
+    background-color: #222;
+    color: #fff;
+    width: 120px;
+    height: 30px;
+    cursor: pointer;
+    
+}
+
+.btnCriarProjeto:hover{
+    color: #ffbb33;
+    
+}
