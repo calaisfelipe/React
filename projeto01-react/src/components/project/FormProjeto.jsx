@@ -6,7 +6,7 @@ import Select from '../form/Select'
 import SubmitButton from '../form/SubmitButton'
 
 
-function FormProjeto({handleSubmit, projectData}) {
+function FormProjeto({handleSubmit, btnText, projectData}) {
     
     const [categories, setCategories] = useState([])
     const [project, setProject] = useState(projectData || {})
@@ -52,17 +52,17 @@ function FormProjeto({handleSubmit, projectData}) {
         <form onSubmit={submit}>
 
             <Input name="projectName" 
-            labelText="Nome do projeto:" Text="Insira o nome do projeto" tipo="text" handleOnChange={handleChange} value={project.name ? project.name : ''}/>
+            labelText="Nome do projeto:" Text="Insira o nome do projeto" tipo="text" handleOnChange={handleChange} values={project.projectName ? project.projectName : ''}/>
             
 
             <Input name="budget" labelText="Orçamento do projeto:" Text="Insira o orçamento total:" tipo="number" handleOnChange={handleChange}
-            value={project.budget ? project.budget : ''}/>
+            values={project.budget ? project.budget : ''}/>
 
             <Select name="budgetType" labelText="Selecione a categoria:" options={categories} 
             handleOnChange={handleCategory}
-            value={project.category? project.category.id : ''}/>
+            value={project.category ? project.category.id : ''}/>
 
-            <SubmitButton Text="Criar Projeto" />
+            <SubmitButton Text={btnText} />
 
         </form>
     )

@@ -38,7 +38,7 @@ function NewProject(){
             
             <p>Crie seu projeto para depois adicionar os serviços</p>
 
-            <FormProjeto handleSubmit={createPost} />
+            <FormProjeto handleSubmit={createPost} btnText='Criar Projeto'/>
 
 
         </div>

@@ -1,0 +1,89 @@
+.cardContainer{
+    width: 210px;
+    height: 220px;
+    border: 1px solid #222;
+    padding: .5em;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: .8em;
+    
+
+
+}
+
+.cardTitle{
+    background-color: #000;
+    color: #ffbb33;
+    margin: .3em .4em;
+    padding: .3em .8em;
+
+}
+
+.orcamentoContainer{
+    height: 30px;
+    margin: 0 .6em;
+    display: flex;
+    gap: .5em;
+    font-size: .8em;
+
+}
+
+.orcamentoContainer > p{
+    font-weight: bold;
+    font-size: 1em;
+    color: black;
+}
+
+.categoryContainer{
+    margin: 0 .6em;
+    font-size: .8em;
+}
+
+.categoryContainer > span{
+    font-size: .7em;
+}
+.category1{
+    color: #FFAEBC;
+}
+
+.category2{
+    color: #A0E7E5;
+  
+}
+
+.category3{
+    color:#B4F8C8;
+   
+}
+.category4{
+    color: #fbe7c6;
+    
+}
+
+.buttonContainer{
+    margin: 0 .6em;
+    display: flex;
+    gap: .5em;
+  
+
+}
+
+.linkCard{
+    background-color: #fff;
+    color:#000;
+    border: solid 1px black;
+    justify-content: center;
+    align-items: center;
+    font-size: .8em;
+    padding: .5em;
+    display: flex;
+    gap: .3em;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.linkCard:hover{
+    background-color: #000;
+    color: #ffbb33;
+}
