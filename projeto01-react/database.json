@@ -1,59 +1,39 @@
 {
   "projects": [
     {
-      "projectName": "12312",
-      "budget": "123123",
+      "projectName": "teste",
+      "budget": "90000",
       "category": {
         "id": "1",
         "name": "Infra"
       },
-      "costs": 0,
-      "services": [],
-      "id": 10
-    },
-    {
-      "projectName": "atualizar23",
-      "budget": "1111",
-      "category": {
-        "id": "1",
-        "name": "Infra"
-      },
-      "costs": 0,
-      "services": [],
-      "id": 11
-    },
-    {
-      "projectName": "0000",
-      "budget": "30000",
-      "category": {
-        "id": "3",
-        "name": "Design"
-      },
-      "costs": 0,
-      "services": [],
-      "id": 12
-    },
-    {
-      "projectName": "2222321",
-      "budget": "1234",
-      "category": {
-        "id": "1",
-        "name": "Infra"
-      },
-      "costs": 0,
-      "services": [],
-      "id": 13
-    },
-    {
-      "projectName": "projeto atualizado2",
-      "budget": "999",
-      "category": {
-        "id": "3",
-        "name": "Design"
-      },
-      "costs": 0,
-      "services": [],
-      "id": 14
+      "costs": 21444,
+      "services": [
+        {
+          "serviceName": "josebe",
+          "serviceCost": "10000",
+          "serviceDescription": "blabla",
+          "id": "15e7d650-d900-4abb-941c-4b26a35076b9"
+        },
+        {
+          "serviceName": "kibe",
+          "serviceCost": "222",
+          "serviceDescription": "111",
+          "id": "d1bd1468-c73f-4ad8-abb5-5f47413373a2"
+        },
+        {
+          "serviceName": "msg",
+          "serviceCost": "111",
+          "serviceDescription": "11",
+          "id": "d5de0541-919d-4128-8e39-78bc58457eca"
+        },
+        {
+          "serviceName": "sdsad",
+          "serviceCost": "11111",
+          "id": "aeafa7a5-8c43-4889-8973-e1659abbc98c"
+        }
+      ],
+      "id": 1
     }
   ],
   "categories": [

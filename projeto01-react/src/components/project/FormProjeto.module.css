@@ -1,6 +1,6 @@
 
 
-form{
+.center{
 
     display: flex;
     justify-content: flex-start;
@@ -11,4 +11,13 @@ form{
 
 
 label{font-weight: bold;}
+
+
+.start{
+   display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: .5em;
+}
 

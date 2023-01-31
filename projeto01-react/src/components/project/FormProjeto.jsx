@@ -6,7 +6,7 @@ import Select from '../form/Select'
 import SubmitButton from '../form/SubmitButton'
 
 
-function FormProjeto({handleSubmit, btnText, projectData}) {
+function FormProjeto({handleSubmit, btnText, projectData, btnAlign}) {
     
     const [categories, setCategories] = useState([])
     const [project, setProject] = useState(projectData || {})
@@ -30,7 +30,7 @@ function FormProjeto({handleSubmit, btnText, projectData}) {
         handleSubmit(project)
 
 
-    }
+    } 
 
             //IMPORTANTE !!
     function handleChange(e){
@@ -49,7 +49,7 @@ function FormProjeto({handleSubmit, btnText, projectData}) {
 
     return (
 
-        <form onSubmit={submit}>
+        <form onSubmit={submit} className={styles[btnAlign]}>
 
             <Input name="projectName" 
             labelText="Nome do projeto:" Text="Insira o nome do projeto" tipo="text" handleOnChange={handleChange} values={project.projectName ? project.projectName : ''}/>
@@ -62,7 +62,9 @@ function FormProjeto({handleSubmit, btnText, projectData}) {
             handleOnChange={handleCategory}
             value={project.category ? project.category.id : ''}/>
 
-            <SubmitButton Text={btnText} />
+            <div >
+                <SubmitButton Text={btnText} />
+            </div>
 
         </form>
     )

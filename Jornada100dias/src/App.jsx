@@ -1,24 +1,50 @@
 import { useState } from 'react'
 import './App.css'
+import Modal from './Components/layout/Modal'
+import Fade from './Components/layout/Fade'
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [nome, setNome]  = useState('Jorge')
- 
+
+  const [showModal, setShowModal] = useState(false)
+  const [showFade , setShowFade] = useState('fadeoff')
+  
+
+  function event(){
+
+    setShowModal(false)
+    setShowFade('fadeoff')
+    return console.log('clicou')
+  }
 
   function clicar(){
-     setCount(count + 1)
+
+    setShowModal(true)
+    setShowFade('fade')
+
   }
+
+  const btn_style = {
+    color: '#fff',
+    backgroundColor: '#007bff',
+    borderRadius: '20px',
+    padding: '.8em 1em',
+    cursor: 'pointer',
+    border: 'none'
+
+  }
+
 
   return (
     <div className="App">
+      
 
-    <h1>Projeto 100 dias</h1>
-      <p>{count}</p>
-      <button type='button' onClick={clicar}>Clique aqui</button><br />
+    {showModal ? (<div>
+      <Modal event={event} btnText='Sair'/>
+      <Fade className={` ${showFade}`}/>
+    </div>) : (<div></div>) }
+    
 
-      <input type="text" name="iname" id="iname" onChange={(e) => setNome(e.target.value)}/>
-      <p>{nome}</p>
+    <button  style={btn_style} onClick={clicar}>Clique aqui</button>
 
     </div>
   )
