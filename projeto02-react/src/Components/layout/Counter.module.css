@@ -1,0 +1,17 @@
+
+
+.counterNumber{
+    background-color: #000;
+    color:#fff;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    font-size: 4em;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.counterText{
+    margin-top: .2em;
+    font-weight: bold;
+}

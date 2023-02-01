@@ -1,33 +1,28 @@
-//import { useState } from 'react'
+//import NewYear from './img/NewYear.jpg'
 import './App.css'
-import Counter from './Components/layout/Counter'
-import Title from './Components/layout/title'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-import NewYear from './img/NewYear.jpg'
+//Pages
+import Home from './pages/Home'
+
+
 
 function App() {
-  //const [count, setCount] = useState(0)
+      
+  //<div className="App" style={{backgroundImage: `url(${NewYear})` }}></div>
 
   return (
-    <div className="App" style={{backgroundImage: `url(${NewYear})` }}>
-      <div className="container">
-          <Title title='Contagem regressiva para 2023' />
-          <div className='countdownContainer'>
+    
+    <Router>
+      <Routes>
+      <Route path='/' element={<Home />} />
+      </Routes>
+    
 
-            <Counter number='00' title='segundos'/>
-            <Counter number='00' title='minutos'/>
-            <Counter number='00' title='horas'/>
-            <Counter number='00' title='dias'/>
-
-
-          </div>
-
-
-      </div>
-
+    </Router>
       
       
-    </div>
+    
   )
 }
 
