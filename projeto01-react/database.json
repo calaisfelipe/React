@@ -2,37 +2,13 @@
   "projects": [
     {
       "projectName": "teste",
-      "budget": "90000",
+      "budget": "2333",
       "category": {
         "id": "1",
         "name": "Infra"
       },
-      "costs": 21444,
-      "services": [
-        {
-          "serviceName": "josebe",
-          "serviceCost": "10000",
-          "serviceDescription": "blabla",
-          "id": "15e7d650-d900-4abb-941c-4b26a35076b9"
-        },
-        {
-          "serviceName": "kibe",
-          "serviceCost": "222",
-          "serviceDescription": "111",
-          "id": "d1bd1468-c73f-4ad8-abb5-5f47413373a2"
-        },
-        {
-          "serviceName": "msg",
-          "serviceCost": "111",
-          "serviceDescription": "11",
-          "id": "d5de0541-919d-4128-8e39-78bc58457eca"
-        },
-        {
-          "serviceName": "sdsad",
-          "serviceCost": "11111",
-          "id": "aeafa7a5-8c43-4889-8973-e1659abbc98c"
-        }
-      ],
+      "costs": 0,
+      "services": [],
       "id": 1
     }
   ],
