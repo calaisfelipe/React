@@ -1,37 +1,28 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
-import Nota from './components/Nota'
-import Resultado from './components/Resultado'
-import Container from './components/Container'
+
 
 function App() {
 
-const [notas, setNotas ] = useState({'nota1': '0', 'nota2' : '0', 'nota3': '0', 'nota4': '0'})
+const [count, setCount ] = useState(0)
 
-function handleSetNotas(e){
+useEffect( 
+    () => { console.log('Pagina carregada')
 
-if(e.target.value === ''){
-  e.target.value = 0
-  setNotas({...notas, [e.target.name] : e.target.value})
-}else {  
-setNotas({...notas, [e.target.name] : e.target.value})
-}
-console.log(notas)
+        window.document.title = count
 
-}
- 
+    },[count])
+
+
+
+
   return (
     <div className="App">
-      <Container custom='horizontal'>
-        <Nota num={1} nota={notas.nota1} handleNota={handleSetNotas}/>
-        <Nota num={2} nota={notas.nota2} handleNota={handleSetNotas}/>
-        <Nota num={3} nota={notas.nota3} handleNota={handleSetNotas}/>
-        <Nota num={4} nota={notas.nota4} handleNota={handleSetNotas}/>
-      </Container>
-      
-      <Resultado soma={parseFloat(notas.nota1) + parseFloat(notas.nota2) +parseFloat(notas.nota3) + parseFloat(notas.nota4)}/>
+        <p>Contagem: {count}</p>
+        <button onClick={(e) => setCount(count + 1)} >Clique aqui</button>
     </div>
   )
+
 }
 
 export default App
