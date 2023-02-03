@@ -1,10 +1,10 @@
 import styles from './Title.module.css'
 
 
-function Title({title}){
+function Title({title, color}){
 
     return(
-        <h1>{title}</h1>
+        <h1 style={{color: color}}>{title}</h1>
 
     )
 

@@ -7,6 +7,8 @@ function Home() {
 
     const [titulo, setTitulo] = useState('')
     const [date, setDate] = useState('')
+    const [color, setColor] = useState('')
+    const [url, setUrl] = useState('')
     const [showForm, setShowForm] = useState(false)
     const [showContador, setShowContador] = useState(false)
 
@@ -19,10 +21,10 @@ function Home() {
 
     return(
        <>
-            {!showForm && (<Form setDate={setDate}  setTitle={setTitulo} action={sendCounter}/>) }
+            {!showForm && (<Form setDate={setDate}  setTitle={setTitulo} handleColor={setColor} action={sendCounter} getUrl={setUrl}/>) }
 
             
-            {showContador && <Contador tittle={titulo} data={date}/> }
+            {showContador && <Contador tittle={titulo} data={date} styleColor={color} putUrl={url}/> }
             
 
      </>

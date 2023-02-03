@@ -1,10 +1,10 @@
 import Counter from './Counter'
-import Title from './title'
+import Title from './Title'
 import styles from './Contador.module.css'
 
 import useCountdown from '../../hooks/useCountdown'
 
-function Contador({tittle, data})
+function Contador({tittle, data, styleColor, putUrl})
 {
 
   console.log(data) //2023-03-13
@@ -46,17 +46,16 @@ function Contador({tittle, data})
     const [day, hour, minute , second] = useCountdown(ModifiedData)
 
     return(
-        <div className={styles.container}>
-          <Title title={tittle} />
-          <div className={styles.countdownContainer}>
-
-            <Counter number={day} title='dias'/>
-            <Counter number={hour} title='horas'/>
-            <Counter number={minute} title='minutos'/>
-            <Counter number={second} title='segundos'/>
-
-
-          </div>
+        <div className={styles.backgroundContainer} style={{backgroundImage: `url(${putUrl})`}}>
+          <div className={styles.container} >
+            <Title title={tittle} color={styleColor} />
+            <div className={styles.countdownContainer}>
+              <Counter number={day} color={styleColor} title='dias'/>
+              <Counter number={hour} color={styleColor} title='horas'/>
+              <Counter number={minute} color={styleColor} title='minutos'/>
+              <Counter number={second} color={styleColor}    title='segundos'/>
+            </div>
+        </div>
 
 
       </div>
