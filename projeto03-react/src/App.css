@@ -1,0 +1,17 @@
+.App{
+    width: 100vw;
+    height: 100vh;
+    background-color: #EB5F8E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    
+    background-color: #3A3F4C;
+    width: 600px;
+    max-height: 800px;
+    border-radius: 10px;
+
+}
