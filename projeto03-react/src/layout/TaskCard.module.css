@@ -1,0 +1,31 @@
+.cardContainer{
+    width: 200px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    
+    
+}
+
+
+.taskName{
+    color: #EB5F8E;
+
+}
+
+.taskDuration{
+    color: #fff;
+}
+
+.btnCard{
+    margin-right: 1em;
+    background-color: #3A3F4C;
+    border: none;
+    cursor: pointer;
+}
+
+svg{
+    color: #fff;
+    font-size: 1.5em;
+}
