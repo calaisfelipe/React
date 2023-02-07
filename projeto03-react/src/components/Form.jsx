@@ -2,8 +2,12 @@ import { useState} from 'react'
 import SecondaryTitle from '../layout/SecondaryTitle'
 import Input from '../layout/Input'
 import styles from '../components/Form.module.css'
+import LoadingData from '../hook/LoadingData'
 
-export default function Form({control}) {
+
+
+
+export default function Form({control,loader}) {
 
   const API = 'http://localhost:5000'
 
@@ -11,7 +15,7 @@ export default function Form({control}) {
   const [time, setTime] = useState('')
 
 
-function getTask(e){
+async function getTask(e){
   e.preventDefault()
   
   const todo = {
@@ -27,7 +31,7 @@ function getTask(e){
   setTime('')
  
 
-  fetch(`${API}/tasks`, {
+  await fetch(`${API}/tasks`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json'},
     body: JSON.stringify(todo)
@@ -35,12 +39,14 @@ function getTask(e){
   })
   .then((response) => response.json())
   .then((data) => {
-    console.log(data)
+    console.log('Enviou pro backend')
     control(data)
+    LoadingData(data,true)
   
   }
   )
   .catch((err) => console.log(err))
+
 
 }
 

@@ -2,50 +2,15 @@
   "todos": [],
   "tasks": [
     {
+      "id": 698,
       "taskName": "teste",
-      "taskDuration": 2,
-      "id": 0
-    },
-    {
-      "id": 368,
-      "taskName": "teste2",
-      "taskDuration": "21",
-      "done": false
-    },
-    {
-      "id": 362,
-      "taskName": "teste3",
-      "taskDuration": "29",
-      "done": false
-    },
-    {
-      "id": 257,
-      "taskName": "nova",
-      "taskDuration": "24",
-      "done": false
-    },
-    {
-      "id": 324,
-      "taskName": "teste22",
       "taskDuration": "2",
       "done": false
     },
     {
-      "id": 554,
-      "taskName": "teste2",
-      "taskDuration": "2",
-      "done": false
-    },
-    {
-      "id": 164,
-      "taskName": "teste3",
+      "id": 384,
+      "taskName": "23",
       "taskDuration": "3",
-      "done": false
-    },
-    {
-      "id": 284,
-      "taskName": "nvoo",
-      "taskDuration": "1",
       "done": false
     }
   ]

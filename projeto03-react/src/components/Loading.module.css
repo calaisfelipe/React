@@ -1,0 +1,14 @@
+.loadingContainer{
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+img{
+    margin: 1em;
+    width: 60px;
+}
+
+

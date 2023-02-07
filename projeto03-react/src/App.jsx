@@ -5,54 +5,66 @@ import Form from './components/Form'
 import SecondaryTitle from './layout/SecondaryTitle'
 import TaskCard from './layout/TaskCard'
 import Container from './layout/Container'
+import Loading from './components/Loading'
 
-const API = 'http://localhost:5000'
+import LoadingData from './hook/LoadingData'
 
 
 function App() {
    
+
+
+
 const [todos, setTodos] = useState([])
 const [loading, setLoading] = useState(false)
 
-useEffect(() => {
+/*
+const loadData = async() => {
 
-  fetch(`${API}/tasks`, {
-    method: 'GET',
-    headers: { 'Content-Type': 'application/json'}
-  })
-  .then((response) => response.json())
-  .then((data) =>{
+  setLoading(true)
 
-      console.log(data)
-      setTodos(data)
+  await fetch(`${API}/tasks`, {
+  method: 'GET',
+  headers: { 'Content-Type': 'application/json'}
+})
+.then((response) => response.json())
+.then((data) =>{
 
+    console.log('fetch rolando')    
+    setTodos(data)
+    
+    
+  
+})
+.catch((err) => console.log(err))
 
-  })
-  .catch((err) => console.log(err))
+}*/
 
-
-
-}, [todos])
 
   return (
+   
     <div className="App">
+       {LoadingData(setTodos, setLoading)}
       <main>
         <MainTitle text='React Todo' />
         <hr></hr>
-        <Form control={setTodos} />
+        <Form control={setTodos} loader={loadData}/>
         <hr></hr>
         <SecondaryTitle text='Lista de tarefas:'/>
 
         <Container>
+        {!loading && <Loading />}
 
-        {todos.length > 0 ? (
-        todos.map((todo) => <TaskCard task={todo.taskName} duration={todo.taskDuration} key={todo.id} done={todo.done} />)
-          ): <p style={{color: '#fff'}}>Não há tarefa para ser exibida</p>}
+        {todos.length === 0 && <p style={{color: '#fff'}}>Não há tarefa para ser exibida</p>}
+
+        { 
+        loading && todos.length > 0 && (
+        todos.map((todo) => <TaskCard task={todo.taskName} duration={todo.taskDuration} key={todo.id} id={todo.id} done={todo.done} allTasks={setTodos} tasks={todos} loader={loadData}/>)
+        ) }
         
-        
-        
-       
         </Container >
+
+        
         
 
 
@@ -61,6 +73,9 @@ useEffect(() => {
 
 
     </div>
+
+    
+    
   )
 
    
