@@ -1,0 +1,68 @@
+header{
+    background-color: #262626;
+    color: #FAB23D;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+}
+
+#movieSearch{
+    height: 30px;
+    border: none;
+    padding: .5em;
+    margin: .3em;
+    border-radius: 5px;
+}
+
+#movieSearch:focus{
+    outline: none;
+}
+
+#logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+#logo:hover{
+    color: #FFC812;
+}
+
+header svg{
+    font-size: 1.4em;
+}
+
+.btnSearch{
+    background-color: transparent;
+    border: none;
+    color: #FAB23D;
+    font-size: 1.3em;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.btnSearch:hover{
+    color: #FFC812;
+    transform: scale(1.1);
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a{
+    font-size: 1.5em;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
