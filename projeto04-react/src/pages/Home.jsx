@@ -46,7 +46,11 @@ export default function Home() {
         <h2>Melhores filmes:</h2>
 
     <div className={styles.containerCardsMovies}>
-    {topMovies.length > 0 && (topMovies.map((movie) => <p>{movie.title}</p>))}
+
+    {topMovies.length > 0 && 
+    (topMovies.map((movie) => <CardMovie title={movie.title} poster={movie.poster_path} stars={movie.vote_average} key={movie.id} id={movie.id}/>)
+    
+    )}
 
     </div>
       

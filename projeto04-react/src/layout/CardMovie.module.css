@@ -1,0 +1,32 @@
+.container{
+    width: 200px;
+    height: 350px;
+}
+
+img{
+    width: 190px;
+    max-height: 330px ;
+}
+
+svg{
+    color: #FAB23D;
+}
+
+
+.containerTitle{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5em;
+}
+
+.title{
+    width: 80%;
+    word-break: break-all;
+}
+
+.average{
+display: flex;
+gap:.5em
+}
