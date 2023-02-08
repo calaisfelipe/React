@@ -15,7 +15,7 @@ function searchMovie(e) {
 
   if(!search) return
 
-  navigate(`/search?q=${search}`)
+  navigate(`/search?${search}`)
   setSearch('')
   console.log(search)
   

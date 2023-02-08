@@ -1,0 +1,54 @@
+.container{
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.cardMovie{
+    padding: 1em;
+    max-width: 700px;
+    max-height: 400px;
+    background-color: #fab13d91;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.504);
+    
+}
+
+.infoContainer{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+   
+}
+
+.imgContainer{
+    width: 50%;
+    
+}
+
+.imgMovie{
+   width: 80%;
+   
+    
+}
+
+.titleContainer{
+   
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .5em;
+    
+}
+
+.movieTitle{
+    margin: 0;
+    font-size: 2em;
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.701);
+    
+}

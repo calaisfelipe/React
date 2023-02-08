@@ -6,6 +6,7 @@
 img{
     width: 190px;
     max-height: 330px ;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.631);
 }
 
 svg{
@@ -24,6 +25,7 @@ svg{
 .title{
     width: 80%;
     word-break: break-all;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.696);
 }
 
 .average{
