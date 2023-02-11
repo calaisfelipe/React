@@ -9,7 +9,12 @@ import './App.css'
 //import UserGreetings from './components/UserGreetings'
 //import ListRendering from './components/ListRendering'
 //import Stylesheet from './components/Stylesheet'
-import Inline from './components/Inline'
+//import Inline from './components/Inline'
+//import PureComp from './components/PureComp'
+//import ParentComp from './components/ParentComp'
+//import RefsExample from './components/RefsExample'
+import FRParent from './components/FRParent'
+import PortalDemo from './components/PortalDemo'
 
 
 
@@ -17,9 +22,8 @@ function App() {
 
   return (
     <div className="App">
-
-    <Inline />
-
+    
+    <PortalDemo />
 
 
     </div>
