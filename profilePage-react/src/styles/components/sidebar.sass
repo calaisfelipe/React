@@ -1,0 +1,39 @@
+@use '../variables'
+@use '../mixins'
+    
+        
+img
+    margin-top: -60px
+    width: 170px
+    height: 160px
+    border-radius: variables.$card-border-radious
+
+
+#sidebarContainer
+    
+    padding: 2em
+    max-width: 240px
+    height: 100%
+    background-color: variables.$bg-color  
+    display: flex
+    flex-wrap: nowrap
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    border-radius: variables.$container-border-radius
+
+#infoJobContainer
+    @include mixins.container
+    margin-top:2em
+
+    
+#socialMediaContainer
+    margin: 2em 0    
+    display: flex
+    gap: .5em
+
+#infoContainer
+    @include mixins.container
+    display: flex
+    flex-direction: column
+    gap: 1em        

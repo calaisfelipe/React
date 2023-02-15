@@ -13,17 +13,27 @@ import './App.css'
 //import PureComp from './components/PureComp'
 //import ParentComp from './components/ParentComp'
 //import RefsExample from './components/RefsExample'
-import FRParent from './components/FRParent'
-import PortalDemo from './components/PortalDemo'
-
+//import FRParent from './components/FRParent'
+//import PortalDemo from './components/PortalDemo'
+//import ClickCounterTwo from './components/ClickCounterTwo'
+//import HoverCounterTwo from './components/HoverCounterTwo'
+//import User from './components/User'
+//import Counter from './components/Counter'
+import ComponentC from './Context/ComponentC'
+import { UserProvider } from './Context/UserContext'
 
 
 function App() {
 
   return (
     <div className="App">
-    
-    <PortalDemo />
+
+      <UserProvider value='Teste'>
+
+      <ComponentC />
+
+      </UserProvider>
+
 
 
     </div>
