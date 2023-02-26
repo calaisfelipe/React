@@ -1,0 +1,14 @@
+
+h1{
+    color: #fff;
+    margin-bottom: .5em;
+}
+
+.App{
+    text-align: center;
+    padding-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

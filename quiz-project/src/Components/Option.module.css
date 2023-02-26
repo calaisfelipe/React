@@ -1,0 +1,33 @@
+
+.optionContainer{
+    background-color:  rgb(84, 34, 142);
+    color: #fff;
+    width: 300px;
+    border-radius: 10px;
+    padding: 1em 1.5em;
+    cursor: pointer;
+    opacity: .8;
+    
+}
+
+.optionStyle{
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.optionContainer:hover{
+    opacity: 1;
+}
+
+
+.correct{
+    background-color: #0bfc03;
+    
+}
+
+.wrong{
+    background-color: #3c0e70;
+    opacity: .4;
+}
+
