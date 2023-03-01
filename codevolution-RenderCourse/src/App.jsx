@@ -1,5 +1,6 @@
 import './App.css'
-import ParentTwo from './components/Optimazation/ParentTwo'
+import ContextParent from './components/context/ContextParent'
+import { ChildA } from './components/context/ContexChild'
 
 
 
@@ -10,7 +11,11 @@ function App() {
     <div className="App">
       <h1>React Render Course</h1>
 
-      <ParentTwo />
+   
+      <ContextParent >
+        <ChildA />
+      </ContextParent>
+    
      
      
      
