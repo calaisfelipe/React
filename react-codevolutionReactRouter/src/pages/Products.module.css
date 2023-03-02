@@ -1,0 +1,23 @@
+.container{
+    margin: 1em 2em;
+    
+
+}
+
+label{
+    margin-right: 10px;
+}
+
+.buttonContainer {
+    margin-top: 1em;
+    display: flex;
+    gap: .5em;
+}
+
+.buttonContainer a {
+    color: #007bff;
+}
+
+.buttonContainer a:hover {
+    color: #444;
+}
