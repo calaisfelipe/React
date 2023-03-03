@@ -1,6 +1,7 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
 import styles from './Navbar.module.css'
+import { useAuth } from '../context/Auth'
 
 const navLinkStyles = ({isActive}) => {
 
@@ -12,6 +13,11 @@ const navLinkStyles = ({isActive}) => {
 
 
 function Navbar({title}) {
+
+
+  const auth = useAuth()
+
+
   return (
 
     <nav className={styles.navbarContainer}>
@@ -22,8 +28,10 @@ function Navbar({title}) {
             <NavLink style={navLinkStyles} to='/products'>Products</NavLink>
             <NavLink style={navLinkStyles} to='/about'>About</NavLink>
 
-            <NavLink  to='https://www.google.com.br/' target='_blank'>Google</NavLink>
+            <NavLink  to='/users'>Users</NavLink>
+            <NavLink to='/profile'>Profile</NavLink>
 
+            {!auth.user  && (<NavLink to='/login'>Login</NavLink>)}
         </div>
 
     </nav>
