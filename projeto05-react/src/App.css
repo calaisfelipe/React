@@ -1,0 +1,22 @@
+
+.App{
+    padding: 2em 0;
+    width: 100vw;
+    height: 100vh;
+    gap: .5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.formContainer{
+    margin-top: 1em;
+    border-radius: 20px;
+    box-shadow:3px  3px 3px rgba(80, 80, 80, 0.472);
+
+    width: 500px;
+    height: 450px;
+
+
+}

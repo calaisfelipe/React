@@ -1,0 +1,29 @@
+
+
+.navbarContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+    background-color: #444;
+    padding: 1em 2em;
+    
+}
+
+h2{
+    color: #fff;
+    text-shadow: 3px solid black;
+    font-weight: bolder;
+}
+
+ul{
+    display: flex;
+    gap: 1em;
+    list-style-type: none;
+}
+
+a{
+    color: #111;
+    font-weight: bolder;
+}

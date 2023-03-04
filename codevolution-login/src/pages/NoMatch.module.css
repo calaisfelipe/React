@@ -1,0 +1,8 @@
+.noMatchContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    font-weight: bold;
+    height: 90vh;
+}

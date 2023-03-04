@@ -1,0 +1,81 @@
+
+.statusContainer{
+    margin-top: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+}
+
+.status svg{
+    font-size: 1.5em;
+}
+
+.active{
+    color: blueviolet;
+   
+    
+}
+
+.active  p {
+    color: black;
+    font-weight: bolder;
+}
+
+.status{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+
+
+.btnContainer{
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+}
+
+label{
+    font-weight: bold;
+}
+
+input[type=radio]{
+    visibility: hidden;
+    
+}
+
+
+.avaliationContainer{
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.avaliationItem{
+    text-align: center;
+    
+}
+
+
+.avaliationItem svg{
+    font-size: 1.8em;
+    cursor: pointer;
+}
+
+.avaliationItem svg:hover{
+    color: blueviolet;
+}
+
+.feedbackAreaContainer{
+    margin-top: 1em;
+   
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
