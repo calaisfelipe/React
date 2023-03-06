@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState} from 'react'
 import { feedbackContext } from '../App'
 
 import styles from './Identification.module.css'
@@ -9,12 +9,13 @@ import ButtonStep from './ButtonStep'
 
 function Identification() {
     const feedback = useContext(feedbackContext)
+    const [user, setUser] = useState('')
+    const [email, setEmail] = useState('')
 
-
-function nextStep(){
-
-    feedback.feedBackDispatch({type: 'NEXT',})
-
+ 
+function nextStep(e){
+    e.preventDefault()
+    feedback.feedBackDispatch({type: 'NEXT', user: user, userEmail: email})
 
 }
 
@@ -42,25 +43,24 @@ function nextStep(){
 
         </div>
 
-        <form className={styles.formContainer}>
+        <form onSubmit={nextStep} className={styles.formContainer}>
             <label htmlFor="userName">
-                Nome:<br /><input type="text" name="userName" id="userName" required placeholder='Digite o seu nome'/>
+                Nome:<br /><input type="text" name="userName" id="userName" required placeholder='Digite o seu nome' onChange={(e) => setUser(e.target.value)}/>
 
             </label>
 
             <label htmlFor="userEmail">
-                E-mail:<br /> <input type="email" name="userName" id="userEmail" required placeholder='Digite o seu e-mail'/>
+                E-mail:<br /> <input type="email" name="userName" id="userEmail" required placeholder='Digite o seu e-mail' onChange={(e) => setEmail(e.target.value)}/>
 
             </label>
 
+      
+                <ButtonStep  text='Avançar' direction='right' />
+            
 
         </form>
 
-            <div className={styles.btnContainer}>
-                <ButtonStep text='Voltar' direction='left'/>
-                <ButtonStep text='Avançar' direction='right' action={nextStep}/>
-            </div>
-
+        
     </div>
   )
 }

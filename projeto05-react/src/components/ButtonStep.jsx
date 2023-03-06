@@ -3,10 +3,10 @@ import styles from './ButtonStep.module.css'
 import {IoChevronBack,IoChevronForward} from 'react-icons/io5'
 import {BsSend} from 'react-icons/bs'
 
-function ButtonStep({text, direction, action}) {
+function ButtonStep({tipo,text, direction, action}) {
   return (
     <>
-    <button className={styles.btn} onClick={action}>
+    <button type={tipo} className={styles.btn} onClick={action}>
     {direction === 'left' && (<span><IoChevronBack /></span>)}
         {text} 
     {direction === 'right' && (<span><IoChevronForward /></span>)}

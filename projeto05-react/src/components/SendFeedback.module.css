@@ -41,6 +41,8 @@ label{
 }
 
 .descricaoContainer{
+    font-size: .8em;
+    padding: 0 2em;
     margin-top: 2em;
     display: flex;
     flex-direction: column;
@@ -50,4 +52,10 @@ label{
 .resumoContainer{
     margin: 1em;
     
+}
+
+.infoContainer{
+
+    display: flex;
+    gap: .8em;
 }

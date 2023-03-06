@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState} from 'react'
 import { feedbackContext } from '../App'
 
 import styles from './Avaliation.module.css'
@@ -9,11 +9,31 @@ import ButtonStep from './ButtonStep'
 
 function Avaliation() {
     const feedback = useContext(feedbackContext)
+    const [avaliationComment , setAvaliationComment] = useState('') 
+    const [avaliationEmoji, setAvaliationEmoji] = useState({avaliation1:false, avaliation2:false ,avaliation3:false ,avaliation4:false , value: 0})
+    
+   
+
+function nextStep(e){
+    e.preventDefault()
+    feedback.feedBackDispatch({type: 'NEXT_END' , comment: avaliationComment, avaliation: avaliationEmoji})
 
 
-function nextStep(){
+}
 
-    feedback.feedBackDispatch({type: 'NEXT_END',})
+function stepBack(){
+
+  feedback.feedBackDispatch({type: 'BACK_BEGIN',})
+
+
+}
+
+function handleEmoji(e){
+  
+  
+
+  setAvaliationEmoji({[e.target.id] : true , value : e.target.value })
+
 
 
 }
@@ -41,36 +61,37 @@ function nextStep(){
 
         </div>
 
+        <form onSubmit={nextStep} >
         <div className={styles.avaliationContainer}>
 
           <div className={styles.avaliationItem}>
             <label htmlFor="avaliation1">
-              <span><BsFillEmojiFrownFill /></span>
-              <input type="radio" name="avaliation" id="avaliation1" />
+              <span style={avaliationEmoji.avaliation1 ? {color: 'blueviolet'} : {color: 'black'}} ><BsFillEmojiFrownFill /></span>
+              <input type="radio" name="avaliation" id="avaliation1" required value='1' onInput={handleEmoji}/>
               <p>insatisfeito</p>
               </label>
           </div>
           
           <div className={styles.avaliationItem}>
             <label htmlFor="avaliation2">
-            <span><BsFillEmojiNeutralFill/></span>
-              <input type="radio" name="avaliation" id="avaliation2" />
+            <span style={avaliationEmoji.avaliation2 ? {color: 'blueviolet'} : {color: 'black'}}><BsFillEmojiNeutralFill/></span>
+              <input type="radio" name="avaliation" id="avaliation2" required value='2' onInput={handleEmoji}/>
               <p>poderia ser melhor</p>
               </label>
           </div>
 
           <div className={styles.avaliationItem}>
             <label htmlFor="avaliation3">
-            <span><BsEmojiSmileFill/></span>
-              <input type="radio" name="avaliation" id="avaliation3" />
+            <span style={avaliationEmoji.avaliation3 ? {color: 'blueviolet'} : {color: 'black'}}><BsEmojiSmileFill/></span>
+              <input type="radio" name="avaliation" id="avaliation3" required value='3' onInput={handleEmoji}/>
               <p>satisfeito</p>
             </label>
           </div>
 
           <div className={styles.avaliationItem}>
             <label htmlFor="avaliation4">
-            <span><BsFillEmojiHeartEyesFill/></span>
-              <input type="radio" name="avaliation" id="avaliation4" />
+            <span style={avaliationEmoji.avaliation4 ? {color: 'blueviolet'} : {color: 'black'}}><BsFillEmojiHeartEyesFill/></span>
+              <input type="radio" name="avaliation" id="avaliation4" required value='4' onInput={handleEmoji}/>
               <p>muito satisfeito</p></label>
               
           </div>
@@ -81,15 +102,17 @@ function nextStep(){
           <div className={styles.feedbackAreaContainer}>
             <label htmlFor="feedbackArea">
               Comentario:<br/>
-              <textarea name="feedbackArea" id="feedbackArea" cols="40" rows="8" placeholder='Conte como foi sua experiencia com o produto'></textarea>
+              <textarea name="feedbackArea" id="feedbackArea" cols="40" rows="8" placeholder='Conte como foi sua experiencia com o produto' required onChange={(e) => setAvaliationComment(e.target.value)}></textarea>
             </label>
           </div>
 
 
             <div className={styles.btnContainer}>
-                <ButtonStep text='Voltar' direction='left'/>
-                <ButtonStep text='Avançar' direction='right' action={nextStep}/>
+                <ButtonStep text='Voltar' direction='left' action={stepBack} />
+                <ButtonStep tipo='submit' text='Avançar' direction='right'/>
             </div>
+
+            </form>
 
     </div>
   )
