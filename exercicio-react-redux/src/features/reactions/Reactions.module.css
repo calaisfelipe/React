@@ -1,0 +1,10 @@
+.btnReaction {
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.btnReaction:active{
+    color: yellow;
+}

@@ -1,0 +1,36 @@
+.createPostContainer{
+display: flex;
+flex-direction: column;
+
+justify-content: center;
+align-items: center;
+
+}
+
+.createPostContainer {
+    color: #fff;
+}
+
+.formContainer{
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+
+}
+
+input[type=text]:focus{
+    outline: none;
+
+}
+
+textarea:focus{
+    outline: none;
+
+}
+
+.btn{
+    padding: .6em .8em;
+    border-radius: 10px;
+    cursor: pointer;
+}
+

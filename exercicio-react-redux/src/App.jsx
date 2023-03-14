@@ -1,9 +1,8 @@
 
 import './App.css'
 
-import NameView from './features/name/NameView'
-import ChangeNameView from './features/name/ChangeNameView'
-import Counter from './features/counter/Counter'
+import AddPostForm from './features/addPosts/AddPostForm'
+import PostList from './features/posts/PostList'
 
 
 function App() {
@@ -11,10 +10,8 @@ function App() {
 
   return (
     <div className="App">
-      <NameView />
-      <ChangeNameView />
-      <hr />
-      <Counter />
+      <AddPostForm />
+      <PostList />
     </div>
   )
 }

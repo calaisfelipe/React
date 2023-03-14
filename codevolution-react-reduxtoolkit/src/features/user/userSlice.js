@@ -1,14 +1,15 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit'
 import axios from 'axios'
  
-
 const url = 'https://jsonplaceholder.typicode.com/users'
+
 
 const initialState = {
     loading: false,
     users: [],
     error: ''
 }
+
 
 //generated pending, fulfilled and rejected action types
 export const fetchUsers = createAsyncThunk('user/fetchUsers', () =>{
