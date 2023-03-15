@@ -1,22 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { nanoid } from '@reduxjs/toolkit'
-import { addPost } from '../posts/postsSlice'
+import { addNewPost} from '../posts/postsSlice'
 import { selectAllUsers } from '../users/userSlices'
 import { useDispatch, useSelector } from 'react-redux'
-
 
 
 import styles from './AddPostForm.module.css'
 
 
 function AddPostForm() {
-
     const users = useSelector(selectAllUsers)
+
     const initialState = { 
     id: '', 
     title: '', 
-    content: '', 
+    body: '', 
     userId: '', 
     date: '' , 
     reactions: {
@@ -47,17 +46,22 @@ function AddPostForm() {
 
         e.preventDefault()
 
-        if (newPost.title && newPost.content) {
-            dispatch(addPost({
+        if (newPost.title && newPost.body) {
+
+            /*dispatch(addPost({
                 ...newPost,
                 date: new Date().toISOString()
-            }))
+            }))*/
+
+            dispatch(addNewPost(newPost))   
+
+
             setNewPost(initialState)
         }
 
     }
 
-    const validation = newPost.title && newPost.content && newPost.userId
+    const validation = newPost.title && newPost.body && newPost.userId
 
     return (
         <section className={styles.createPostContainer}>
@@ -80,10 +84,10 @@ function AddPostForm() {
 
                 </label>
 
-                <label htmlFor="content">
-                    <p>Post Content:</p>
+                <label htmlFor="body">
+                    <p>Post body:</p>
 
-                    <textarea name="content" id="postContent" cols="30" rows="10" onChange={handlePost} value={newPost.content}> </textarea>
+                    <textarea name="body" id="postbody" cols="30" rows="10" onChange={handlePost} value={newPost.body}> </textarea>
 
                 </label>
 

@@ -9,19 +9,19 @@ import { reactionsAdd } from '../posts/postsSlice'
 
 import styles from './Reactions.module.css'
 
-function Reactions({reactionType,count, postId, reaction}) {
+function Reactions({reactionType,count, postId}) {
     const dispatch = useDispatch()
 
     const newReaction = {
         postId,
-        reaction
+        reactionType
     }
 
   return (
     <>
     <button className={styles.btnReaction} onClick={() => dispatch(reactionsAdd(newReaction))}>
         {reactionType === 'heart' && <BsHeart />}
-        {reactionType === 'thumbUp' && <BsHandThumbsUpFill />}
+        {reactionType === 'thumbsUp' && <BsHandThumbsUpFill />}
         {reactionType === 'rocket' && <BsRocket />}
         {reactionType === 'wow' && <FaRegSurprise />}
         {reactionType === 'coffee' && <BiCoffee />}

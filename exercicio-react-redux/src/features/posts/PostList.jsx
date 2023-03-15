@@ -1,42 +1,47 @@
-import React from 'react'
-import {useSelector} from 'react-redux'
-import { selectAllPosts } from './postsSlice'
-import { selectAllUsers } from '../users/userSlices'
+import React, {useEffect} from 'react'
+import {useSelector, useDispatch} from 'react-redux'
+import { selectAllPosts, gettingPosts , getPostError, getPostStatus} from './postsSlice'
+import PostExcerpt from './PostExcerpt'
 
-import TimeAgo from '../date/TimeAgo'
-import Reactions from '../reactions/Reactions'
 import styles from './PostList.module.css'
 
 
-
 function PostList() {
-    
+    const dispatch = useDispatch()
+    const postStatus = useSelector(getPostStatus)
+    const postError = useSelector(getPostError)
     const posts  = useSelector(selectAllPosts)
-    const users = useSelector(selectAllUsers)
+    
 
-    const orderedPosts = posts.slice().sort((a,b) => b.date.localeCompare(a.date))
+  useEffect(() => { 
+
+  if (postStatus === 'idle'){
+    dispatch(gettingPosts())}
+    
+
+  }, [postStatus, dispatch])
+
+let content
+
+if(postStatus === 'loading'){
+  content = <p>"Loading..."</p>
+}else if(postStatus === 'success'){
+  const orderedPosts = posts.slice().sort((a,b) => b.date.localeCompare(a.date))
+  content = orderedPosts.map( post => <PostExcerpt key={post.id} post={post} />)
+
+}else if(postStatus === 'failed'){
+    content = <p>{postError}</p>
+}
+
 
   return (
     <div className={styles.containerAll}>
         
         <h2>PostList:</h2>
+          {content}
 
-        {
-            orderedPosts.map((post) => 
-                <article className={styles.postContainer} key={post.id}>
-                <h3>{post.title}</h3>
-                <p>{post.content.substring(0, 100)}</p>
-                <small>by {users.map((user) => user.id == post.userId ? user.name : '')} </small>
-                <TimeAgo time={post.date} />
-                <div className={styles.reactionContainer}>
-                  <Reactions reactionType='heart' count={post.reactions.heart} postId={post.id} reaction='heart'/>
-                  <Reactions reactionType='wow' count={post.reactions.wow} postId={post.id} reaction='wow'/>
-                  <Reactions reactionType='coffee' count={post.reactions.coffee} postId={post.id} reaction='coffee'/>
-                  <Reactions reactionType='rocket' count={post.reactions.rocket} postId={post.id} reaction='rocket'/>
-                  <Reactions reactionType='thumbUp' count={post.reactions.thumbsUp} postId={post.id} reaction='thumbsUp' />
-                </div>
-                </article>)
-        }
+       
+
     </div>
   )
 }
