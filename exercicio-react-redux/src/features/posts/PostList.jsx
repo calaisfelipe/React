@@ -37,7 +37,7 @@ if(postStatus === 'loading'){
   return (
     <div className={styles.containerAll}>
         
-        <h2>PostList:</h2>
+       
           {content}
 
        

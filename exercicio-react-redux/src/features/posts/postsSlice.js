@@ -41,6 +41,19 @@ export const addNewPost = createAsyncThunk('posts/addNewPost', async (initialPos
     }
 })
 
+/*
+export const editPost = createAsyncThunk('posts/editPost', async (editedPost) =>{
+    try{
+        const response = await axios.patch(url, editedPost)
+        return response.data
+    }
+    catch (err){
+        return err.message
+    }
+})*/
+
+
+
 
 const postsSlice = createSlice({
     name: 'posts',
@@ -48,6 +61,17 @@ const postsSlice = createSlice({
     reducers: {
         addPost: (state, action) => {
             state.posts.push(action.payload)
+        },
+        editPost: (state,action) => {
+            const {postId} = action.payload
+            const lastPost = state.posts.filter((post) => post.id !== postId)
+            
+            if(lastPost){
+                state.posts = lastPost
+                state.posts.push(action.payload)
+            }
+
+
         },
         reactionsAdd: (state, action) => {
             const { postId, reactionType } = action.payload
@@ -109,11 +133,11 @@ const postsSlice = createSlice({
 })
 
 export const selectAllPosts = (state) => state.posts.posts
-
 export const getPostStatus = (state) => state.posts.status
 export const getPostError = (state) => state.posts.error
 
+export const selectPostById = (state, postId) => state.posts.posts.find((post) => post.id === postId)
 
 
 export default postsSlice.reducer
-export const { addPost, reactionsAdd } = postsSlice.actions
+export const { addPost, reactionsAdd, editPost } = postsSlice.actions

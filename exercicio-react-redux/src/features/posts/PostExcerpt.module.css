@@ -7,6 +7,14 @@ h2{
     text-shadow: 2px 2px 2px black;
 }
 
+.containerAll{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
 .postContainer{
     display: flex;
     flex-direction: column;
@@ -23,7 +31,17 @@ h2{
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.275);
 }
 
+
 .reactionContainer{
     display: flex;
     gap: .5em;
+}
+
+.editLink{
+    font-weight: normal;
+    font-size: .7em;
+}
+
+.editLink:hover{
+    color:blueviolet;
 }

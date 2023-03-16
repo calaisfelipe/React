@@ -4,6 +4,7 @@ import {useSelector} from 'react-redux'
 import TimeAgo from '../date/TimeAgo'
 import Reactions from '../reactions/Reactions'
 import { selectAllUsers } from '../users/userSlices'
+import {Link} from 'react-router-dom'
 
 import styles from './PostExcerpt.module.css'
 
@@ -27,6 +28,7 @@ function PostExcerpt({post}) {
                 <Reactions reactionType='coffee' count={post.reactions.coffee} postId={post.id} />
                 <Reactions reactionType='rocket' count={post.reactions.rocket} postId={post.id} />
                 <Reactions reactionType='thumbsUp' count={post.reactions.thumbsUp} postId={post.id} />
+                <div><Link className={styles.editLink} to={`/post/${post.id}`}>See Post</Link></div>
             </div>
         </article>
     )

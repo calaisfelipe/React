@@ -4,6 +4,7 @@ import { nanoid } from '@reduxjs/toolkit'
 import { addNewPost} from '../posts/postsSlice'
 import { selectAllUsers } from '../users/userSlices'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 
 import styles from './AddPostForm.module.css'
@@ -11,6 +12,7 @@ import styles from './AddPostForm.module.css'
 
 function AddPostForm() {
     const users = useSelector(selectAllUsers)
+    const navigate = useNavigate()
 
     const initialState = { 
     id: '', 
@@ -57,6 +59,7 @@ function AddPostForm() {
 
 
             setNewPost(initialState)
+            navigate('/')
         }
 
     }
