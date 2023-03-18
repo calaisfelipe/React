@@ -40,8 +40,37 @@ h2{
 .editLink{
     font-weight: normal;
     font-size: .7em;
+    text-decoration: underline;
 }
 
-.editLink:hover{
+.editLink:hover, .btnDelete:hover{
     color:blueviolet;
+}
+
+.btnDelete{
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: .7em;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.actionsContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5em;
+}
+
+.btnConfirm{
+    padding: .6em .8em;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+}
+
+.btnConfirm:hover{
+    color: #fff;
+    background-color: #666;
 }

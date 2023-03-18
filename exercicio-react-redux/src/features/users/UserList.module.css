@@ -1,0 +1,21 @@
+.containerAll, .containerList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerList{
+    gap: .5em;
+}
+
+.userLink:hover{
+    color: blueviolet;
+
+}
+
+.userPostList{
+    text-align: center;
+    
+   
+}

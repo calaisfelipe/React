@@ -34,4 +34,4 @@ function PostExcerpt({post}) {
     )
 }
 
-export default PostExcerpt
+export default React.memo(PostExcerpt)

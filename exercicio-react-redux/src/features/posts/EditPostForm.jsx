@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { selectPostById, editPost } from './postsSlice'
@@ -8,74 +8,76 @@ import styles from '../addPosts/AddPostForm.module.css'
 
 
 function EditPostForm() {
-const navigate = useNavigate()
-const dispatch = useDispatch()
-const {id} = useParams()
-const postId = Number(id)
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const { id } = useParams()
+    const postId = Number(id)
 
-const users = useSelector(selectAllUsers)
-const post = useSelector((state) => selectPostById(state, postId))
-const [editedInfo, setEditedInfo] = useState(post)
-
-
-function handlePost(e){
-
-    setEditedInfo({...editedInfo,
-        [e.target.name] : e.target.value
-
-    })
+    const users = useSelector(selectAllUsers)
+    const post = useSelector((state) => selectPostById(state, postId))
+    const [editedInfo, setEditedInfo] = useState(post)
 
 
-}
+    function handlePost(e) {
 
-function sendPost(e) {
+        setEditedInfo({
+            ...editedInfo,
+            [e.target.name]: e.target.value
 
-   e.preventDefault()
-
-    dispatch(editPost(editedInfo))
-
-    navigate('/')
+        })
 
 
+    }
 
-}
+    function sendPost(e) {
+        e.preventDefault()
+
+
+        dispatch(editPost(editedInfo))
+
+        navigate(`/post/${postId}`)
+
+    }
 
     const validation = editedInfo.title && editedInfo.body && editedInfo.userId
 
     return (
-    <section className={styles.createPostContainer}>
+        <>
+            {!post ? <h2>Post Not Found!!</h2> : (<section className={styles.createPostContainer}>
 
-            <h2>Edit Post</h2>
+                <h2>Edit Post</h2>
 
-            <form onSubmit={sendPost} className={styles.formContainer}>
-                <label htmlFor="title">
-                    <p>Post Title:</p>
-                    <input type="text" name="title" id="postTitle" onChange={handlePost} placeholder='Titulo do post..' value={editedInfo.title} />
+                <form onSubmit={sendPost} className={styles.formContainer}>
+                    <label htmlFor="title">
+                        <p>Post Title:</p>
+                        <input type="text" name="title" id="postTitle" onChange={handlePost} placeholder='Titulo do post..' value={editedInfo.title} />
 
-                </label>
+                    </label>
 
-                <label htmlFor="userSelector">
-                    <p>Author:</p>
-                    <select name="userId" id="userSelector" value={editedInfo.userId} onChange={handlePost}>
-                        <option value="">Selecione um autor</option>
-                        {users.map((user) => <option key={user.id} value={user.id}>{user.name}</option>)}
-                    </select>
+                    <label htmlFor="userSelector">
+                        <p>Author:</p>
+                        <select name="userId" id="userSelector" value={editedInfo.userId} onChange={handlePost}>
+                            <option value="">Selecione um autor</option>
+                            {users.map((user) => <option key={user.id} value={user.id}>{user.name}</option>)}
+                        </select>
 
-                </label>
+                    </label>
 
-                <label htmlFor="body">
-                    <p>Post body:</p>
+                    <label htmlFor="body">
+                        <p>Post body:</p>
 
-                    <textarea name="body" id="postbody" cols="30" rows="10" onChange={handlePost} value={editedInfo.body}> </textarea>
+                        <textarea name="body" id="postbody" cols="30" rows="10" onChange={handlePost} value={editedInfo.body}> </textarea>
 
-                </label>
+                    </label>
 
-                <button className={styles.btn} disabled={!validation} type='submit'>Editar Post</button>
-            </form>
+                    <button className={styles.btn} disabled={!validation} type='submit'>Editar Post</button>
+                </form>
 
 
-        </section>
-  )
+            </section>)
+            }
+        </>
+    )
 }
 
 export default EditPostForm

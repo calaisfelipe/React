@@ -9,6 +9,8 @@ import PostList from './features/posts/PostList'
 import PageNotFound from './features/pages/PageNotFound'
 import About from './features/pages/About'
 import EditPostForm from './features/posts/EditPostForm'
+import UserList from './features/users/UserList'
+import UserPost from './features/users/UserPost'
 
 
 function App() {
@@ -32,10 +34,14 @@ function App() {
 
           </Route>
 
-
+      
         </Route>
 
+        <Route  path='user' element={''}>
+          <Route index element={<UserList />} />
+          <Route path=':id' element={<UserPost /> } />                
 
+        </Route>
 
 
         <Route path='about' element={<About />} />

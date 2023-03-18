@@ -11,7 +11,8 @@ const url = 'https://jsonplaceholder.typicode.com/posts'
 const initialState = {
     posts: [],
     status: 'idle', //idle | loading | success | failed | 
-    error: null
+    error: null,
+    count: 0
 }
 
 
@@ -41,17 +42,31 @@ export const addNewPost = createAsyncThunk('posts/addNewPost', async (initialPos
     }
 })
 
-/*
 export const editPost = createAsyncThunk('posts/editPost', async (editedPost) =>{
+    const {id} = editedPost
+
     try{
-        const response = await axios.patch(url, editedPost)
+        const response = await axios.put(`${url}/${id}`, editedPost)
         return response.data
     }
     catch (err){
+        return editedPost  //only for testing redux!
+    }
+})
+
+export const deleteFetchPost = createAsyncThunk('posts/deleteFetchPost', async (initialPost) =>{
+    const {id} = initialPost
+  
+  try{const response = await axios.delete(`${url}/${id}`)
+        if(response?.status === 200) return initialPost
+        return `${response?.status}: ${response?.statusText}`
+  
+  }  
+    catch(err){
         return err.message
     }
-})*/
 
+})
 
 
 
@@ -59,19 +74,8 @@ const postsSlice = createSlice({
     name: 'posts',
     initialState,
     reducers: {
-        addPost: (state, action) => {
-            state.posts.push(action.payload)
-        },
-        editPost: (state,action) => {
-            const {postId} = action.payload
-            const lastPost = state.posts.filter((post) => post.id !== postId)
-            
-            if(lastPost){
-                state.posts = lastPost
-                state.posts.push(action.payload)
-            }
-
-
+        increaseCount: (state) =>{
+            state.count += 1
         },
         reactionsAdd: (state, action) => {
             const { postId, reactionType } = action.payload
@@ -129,15 +133,50 @@ const postsSlice = createSlice({
 
         })
 
+        builder.addCase(editPost.fulfilled, (state,action) =>{
+            if(!action.payload?.id){
+                console.log('update could not complete')
+                console.log(action.payload)
+                return
+            }
+
+            const {id} = action.payload
+            action.payload.date = new Date().toISOString()
+
+            const lastPost = state.posts.filter((post) => post.id !== id)
+            
+            state.posts = [...lastPost, action.payload]
+
+        })
+
+        builder.addCase(deleteFetchPost.fulfilled, (state,action) =>{
+
+            if(!action.payload?.id){
+                console.log('Delete could not complete')
+                console.log(action.payload)
+                return
+            }
+
+            const {id} = action.payload
+
+            const posts = state.posts.filter((post) => post.id !== id)
+
+            state.posts = [...posts]
+
+
+        })
+
+
     }
 })
 
 export const selectAllPosts = (state) => state.posts.posts
 export const getPostStatus = (state) => state.posts.status
 export const getPostError = (state) => state.posts.error
+export const getCount = (state) => state.posts.count
 
 export const selectPostById = (state, postId) => state.posts.posts.find((post) => post.id === postId)
 
 
 export default postsSlice.reducer
-export const { addPost, reactionsAdd, editPost } = postsSlice.actions
+export const { increaseCount, reactionsAdd } = postsSlice.actions

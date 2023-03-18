@@ -7,19 +7,19 @@ import styles from './PostList.module.css'
 
 
 function PostList() {
-    const dispatch = useDispatch()
+   // const dispatch = useDispatch()
     const postStatus = useSelector(getPostStatus)
     const postError = useSelector(getPostError)
     const posts  = useSelector(selectAllPosts)
     
 
-  useEffect(() => { 
+/*  useEffect(() => { 
 
   if (postStatus === 'idle'){
     dispatch(gettingPosts())}
     
 
-  }, [postStatus, dispatch])
+  }, [postStatus, dispatch])*/
 
 let content
 
