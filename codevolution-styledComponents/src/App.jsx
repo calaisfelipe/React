@@ -1,4 +1,4 @@
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import './App.css'
 import Logo from '../public/vite.svg'
 import StyledButton, { LightButton } from './components/button/Button'
@@ -7,6 +7,30 @@ import { FancyButton, SubmitButton, DarkButton } from './components/button/Butto
 import { ImageRotate } from './components/animations/Animation'
 
 
+const GlobalStyle = createGlobalStyle`
+  button {
+    text-decoration: underline;
+  }
+
+  a{
+    text-decoration: none;
+    border:dashed 2px red;
+    font-size: 2em;
+  }
+`
+
+const theme = {
+  dark: {
+    primary: '#000',
+    text: '#fff'
+  }, 
+  light:{
+    primary: '#fff',
+    text: '#000'
+  },
+
+}
+
 function App() {
 
   function test() {
@@ -14,29 +38,15 @@ function App() {
 
   }
 
-  const theme = {
-    dark: {
-      primary: '#000',
-      text: '#fff'
-
-
-    }, 
-    light:{
-      primary: '#fff',
-      text: '#000'
-
-    },
-
-  }
-
 
   return (
     <div className="App">
+      
      <ThemeProvider theme={theme}>
-
+     <GlobalStyle />
      <DarkButton>Dark</DarkButton>
-     <LightButton>Light</LightButton>
-
+     <LightButton>Light</LightButton> 
+     <a href="#">Teste</a>
       <ImageRotate src={Logo} alt='logo'></ImageRotate>
 
       <StyledButton onClick={test}>Hello</StyledButton>
