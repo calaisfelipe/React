@@ -1,0 +1,45 @@
+.profileImg{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.361);
+}
+
+.cardContainer, .cardContainerVertical{
+    padding: 1em;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    background: rgba( 255, 255, 255, 0.35 );
+    width: 400px;
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5em;
+}
+
+.cardContainerVertical{
+    height: 94vh;
+    gap: 1.5em;
+}
+
+.locationContainer, .followersContainer{
+
+    display: flex;
+    gap: 1em;
+}
+
+span > svg{
+    font-size: 1.2em;
+    
+}
+
+.followerParagraf{
+    text-align: center;
+    background-color: #555;
+    color: #fff;
+    width: 65px;
+    padding: 10px;
+    font-weight: bold;
+
+}
