@@ -11,12 +11,15 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+import LogoDevIcon from '@mui/icons-material/LogoDev';
 
 import { Link, useNavigate } from 'react-router-dom';
 
-const pages = ['Buttons', 'Inputs', 'Formulario', 'teste'];
+
+const pages = ['Buttons', 'Inputs', 'Formulario', 'containers', 'complexcomponents', 'Navigation', 'Tables', 'DataDisplay', 'Feedback', 'Labs'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+
+
 
 function Navbar() { 
   const navigate = useNavigate()  
@@ -44,10 +47,10 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="static" color='error'>
+    <AppBar position="static" sx={{backgroundColor: '#222'}}  >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <LogoDevIcon fontSize='large' sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -102,7 +105,7 @@ function Navbar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <LogoDevIcon fontSize='large' sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -119,7 +122,7 @@ function Navbar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            MUI
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => ( 
@@ -129,7 +132,8 @@ function Navbar() {
                 sx={{ my: 2, color: 'white', display: 'block' }}
 
               >
-               <Link key={page} to={`/${page}`} >{page}</Link>
+               <Link style={{color:'#fff',
+              textDecoration: 'none'}} key={page} to={`/${page}`} >{page}</Link>
               </Button>
             ))}
           </Box>
@@ -137,7 +141,7 @@ function Navbar() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="Felipe Calais" src="">FC</Avatar>
               </IconButton>
             </Tooltip>
             <Menu

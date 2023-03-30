@@ -4,15 +4,18 @@ import {Stack } from '@mui/material'
 import MuiButton from '../components/MuiButton'
 import MuiButtonGroup from '../components/MuiButtonGroup'
 import MuiToggleButton from '../components/MuiToggleButton'
+import MuiLoadingButton from '../components/MuiLoadingButton'
 
 function ButtonPage() {
   return (
-    <Stack>
+    <Stack p={2} spacing={2}>
         <MuiButton />
-        <hr/>
+        
         <MuiButtonGroup />
-        <hr/>
+        
         <MuiToggleButton />
+
+        <MuiLoadingButton />
 
 
 

@@ -7,7 +7,7 @@ import MuiSelect from '../components/MuiSelect'
 
 function InputsPage() {
   return (
-    <Stack spacing={2} direction='column'>
+    <Stack spacing={2} direction='column'  p={2}>
       <MuiTypografy />
       <hr />
       <MuiTextField />
