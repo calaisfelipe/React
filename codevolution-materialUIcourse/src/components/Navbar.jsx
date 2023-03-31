@@ -16,7 +16,7 @@ import LogoDevIcon from '@mui/icons-material/LogoDev';
 import { Link, useNavigate } from 'react-router-dom';
 
 
-const pages = ['Buttons', 'Inputs', 'Formulario', 'containers', 'complexcomponents', 'Navigation', 'Tables', 'DataDisplay', 'Feedback', 'Labs'];
+const pages = ['Buttons', 'Inputs', 'Formulario', 'containers', 'complexcomponents', 'Navigation', 'Tables', 'DataDisplay', 'Feedback', 'Labs', 'Responsive', 'Costumazation'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 

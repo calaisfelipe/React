@@ -14,14 +14,15 @@ import DataDisplayPage from './Pages/DataDisplayPage'
 import TablePage from './Pages/TablePage'
 import FeedbackPage from './Pages/FeedbackPage'
 import LabsPage from './Pages/LabsPage'
-
+import ResponsivePage from './Pages/ResponsivePage'
+import CostumazationPage from './Pages/CostumazationPage'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     
     <BrowserRouter>
-
+    
     <Navbar />
     <Routes>
 
@@ -36,11 +37,15 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Route path='tables' element={<TablePage />} />
     <Route path='feedback' element={<FeedbackPage />} />
     <Route path='labs' element={<LabsPage />} />
-    
+    <Route path='responsive' element={<ResponsivePage />} />
+    <Route path='costumazation' element={<CostumazationPage />} />
+   
+
+
     </Routes>
 
 
-   
+    
     </BrowserRouter>
   </React.StrictMode>,
 )
