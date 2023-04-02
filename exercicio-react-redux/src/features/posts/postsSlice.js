@@ -131,7 +131,7 @@ const postsSlice = createSlice({
 
             state.posts.push(action.payload)
 
-        })
+        }) 
 
         builder.addCase(editPost.fulfilled, (state,action) =>{
             if(!action.payload?.id){
