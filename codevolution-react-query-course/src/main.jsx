@@ -9,6 +9,12 @@ import HomePage from './Pages/HomePage'
 import SuperHeroesPage from './Pages/SuperHeroesPage'
 import RQSuperHeroesPage from './Pages/RQSuperHeroesPage'
 import Navbar from './components/Navbar'
+import HeroesDetailPage from './Pages/HeroesDetailPage'
+import ParallelPage from './Pages/ParallelPage'
+import DynamicParallelPage from './Pages/DynamicParallelPage'
+import DependentQueriesPage from './Pages/DependentQueriesPage'
+import PaginatedPages from './Pages/PaginatedPages'
+import InfiniteQueriesPage from './Pages/InfiniteQueriesPage'
 
 const queryClient = new QueryClient()
 
@@ -22,6 +28,22 @@ ReactDOM.createRoot(document.getElementById('root')).render(
      <Route path='home' element={<HomePage />} />
      <Route path='superheroes' element={<SuperHeroesPage />} />
      <Route path='rqsuperheroes' element={<RQSuperHeroesPage />} />
+     <Route path='parallel' element={<ParallelPage />} />
+
+     <Route path='dependent' element={<DependentQueriesPage email='felipe_calais@hotmail.com' />} />
+
+     <Route path='dinamicparallel' element={<DynamicParallelPage heroIds={[1, 3]}/>} >
+
+
+     </Route>
+
+
+     <Route path='/superherodetails/:id' element={<HeroesDetailPage />} />
+     <Route path='/paginated' element={<PaginatedPages />} />
+     <Route path='/infinity' element={<InfiniteQueriesPage/>} />
+      
+     
+
     
 
     </Routes>

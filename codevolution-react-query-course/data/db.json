@@ -1,27 +1,138 @@
 {
-    "superheroes":[
-        {
-            "id" : 1,
-            "name" : "Batman",
-            "alterEgo": "Bruce Wayne"
-
-        },
-        {
-            "id" : 2,
-            "name" : "Superman",
-            "alterEgo": "Clark Kent"
-
-        },
-        {
-            "id" : 3,
-            "name" : "Wonder Woman",
-            "alterEgo": "Princess Diana"
-
-        }
-    ]
-
-
-
-
-
+  "superheroes": [
+    {
+      "id": 1,
+      "name": "Batman",
+      "alterEgo": "Bruce Wayne"
+    },
+    {
+      "id": 2,
+      "name": "Superman",
+      "alterEgo": "Clark Kent"
+    },
+    {
+      "id": 3,
+      "name": "Wonder Woman",
+      "alterEgo": "Princess Diana"
+    },
+    {
+      "id": 4,
+      "name": "Green lantern",
+      "alterEgo": "Roy jordan"
+    },
+    {
+      "id": 8,
+      "name": "the flash",
+      "alterEgo": "barry allen"
+    },
+    {
+      "id": 9,
+      "name": "Aquaman",
+      "alterEgo": "king of atlantis"
+    },
+    {
+      "id": 10,
+      "name": "robin",
+      "alterEgo": "batman assistent"
+    },
+    {
+      "name": "green arrow",
+      "alterEgo": "oliver queen",
+      "id": 11
+    },
+    {
+      "name": "spider-man",
+      "alterEgo": "Peter parker",
+      "id": 12
+    },
+    {
+      "name": "catwoman",
+      "alterEgo": "selina",
+      "id": 13
+    },
+    {
+      "id": 14,
+      "name": "heroi careca",
+      "alterEgo": "saitama"
+    },
+    {
+      "name": "goku",
+      "alterEgo": "kakarotto",
+      "id": 15
+    },
+    {
+      "id": 16,
+      "name": "teste",
+      "alterEgo": "teste"
+    },
+    {
+      "id": 17,
+      "name": "vegeta",
+      "alterEgo": "principe dos sayajins"
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "name": "joaozinho"
+    },
+    {
+      "id": 2,
+      "name": "Mariazinha"
+    },
+    {
+      "id": 3,
+      "name": "Juvenildo"
+    }
+  ],
+  "users": [
+    {
+      "id": "felipe_calais@hotmail.com",
+      "channelId": "developerNew"
+    }
+  ],
+  "channels": [
+    {
+      "id": "developerNew",
+      "courses": [
+        "react",
+        "vue",
+        "angular"
+      ]
+    }
+  ],
+  "colors": [
+    {
+      "id": 1,
+      "label": "red"
+    },
+    {
+      "id": 2,
+      "label": "blue"
+    },
+    {
+      "id": 3,
+      "label": "green"
+    },
+    {
+      "id": 4,
+      "label": "yellow"
+    },
+    {
+      "id": 5,
+      "label": "black"
+    },
+    {
+      "id": 6,
+      "label": "white"
+    },
+    {
+      "id": 7,
+      "label": "purple"
+    },
+    {
+      "id": 8,
+      "label": "orange"
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Stack, CircularProgress, List, ListItem, ListItemText, Typography, Divider } from '@mui/material'
-
+ 
 function SuperHeroesPage() {
   const [loading, setLoading] = useState(false)
   const [data, setData] = useState([])
