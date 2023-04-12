@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "adalberto",
+      "age": 17,
+      "job": "estagiario"
+    },
+    {
+      "id": 2,
+      "name": "Jurandir",
+      "age": 27,
+      "job": "Uber"
+    },
+    {
+      "id": 3,
+      "name": "Ermelindo",
+      "age": 37,
+      "job": "programador"
+    },
+    {
+      "id": 4,
+      "name": "josivaldo",
+      "age": 47,
+      "job": "programador senior"
+    },
+    {
+      "name": "robin",
+      "job": "hero",
+      "age": "33",
+      "id": 5
+    },
+    {
+      "name": "batman",
+      "job": "hero",
+      "age": "40",
+      "id": 6
+    },
+    {
+      "name": "catwoman",
+      "job": "vilan",
+      "age": "22",
+      "id": 7
+    },
+    {
+      "name": "teste",
+      "job": "2",
+      "age": 0,
+      "id": 8
+    },
+    {
+      "name": "w22",
+      "job": "22w",
+      "age": 0,
+      "id": 9
+    },
+    {
+      "name": "Aquaman",
+      "job": "hero",
+      "age": 0,
+      "id": 10
+    }
+  ]
+}
