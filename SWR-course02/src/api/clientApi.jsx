@@ -23,3 +23,13 @@ export const newUser =  async (user) => {
    
 }
 
+export const editUser = async (id, editedUser) => {
+    return  await client.put(`/users/${id}`, editedUser)
+}
+
+
+export const deleteUser = async (id) => {
+    const response = await client.delete(`/users/${id}`)
+    return response.data
+}
+
