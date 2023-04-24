@@ -1,5 +1,5 @@
-import React from 'react'
-import { Button, Stack } from '@mui/material'
+import React from "react";
+import { Button, Stack } from "@mui/material";
 
 function CounterTwo(props) {
   return (
@@ -7,31 +7,29 @@ function CounterTwo(props) {
       <h1>Counter Two</h1>
       <p>{props.count}</p>
 
-      <Stack spacing={2} direction='row'>
+      <Stack spacing={2} direction="row">
+        {props.handleIncrement && (
+          <Button
+            onClick={props.handleIncrement}
+            variant="contained"
+            color="success"
+          >
+            Increment
+          </Button>
+        )}
 
-        {props.handleIncrement && 
-        <Button 
-        onClick={props.handleIncrement}
-        variant='contained'
-        color='success'>
-
-          Increment</Button>}
-
-        {props.handleDecrement && <Button
-          onClick={props.handleDecrement}
-          variant='contained'
-          color='error'
-
-
-        >
-
-          Decrement</Button>}
-
+        {props.handleDecrement && (
+          <Button
+            onClick={props.handleDecrement}
+            variant="contained"
+            color="error"
+          >
+            Decrement
+          </Button>
+        )}
       </Stack>
-
-
     </div>
-  )
+  );
 }
 
-export default CounterTwo
+export default CounterTwo;

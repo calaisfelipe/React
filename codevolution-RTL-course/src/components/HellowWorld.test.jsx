@@ -1,14 +1,10 @@
-import {render, screen} from '@testing-library/react'
-import HelloWorld from './HelloWorld'
+import { render, screen } from "@testing-library/react";
+import HelloWorld from "./HelloWorld";
 
-test('hellow Test' , () =>{
+test("hellow Test", () => {
+  render(<HelloWorld />);
 
-    render(<HelloWorld />)
+  const textElement = screen.getByText(/hello world/i);
 
-    const textElement = screen.getByText(/hello world/i)
-
-    expect(textElement).toBeInTheDocument()
-
-
-
-})
+  expect(textElement).toBeInTheDocument();
+});

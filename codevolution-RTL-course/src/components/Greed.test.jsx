@@ -1,24 +1,19 @@
-import {render, screen} from '@testing-library/react'
-import { Greed } from './Greed'
+import { render, screen } from "@testing-library/react";
+import { Greed } from "./Greed";
 
-describe('jest', () => {
+describe("jest", () => {
+  test("Greed renders correctly", () => {
+    render(<Greed />);
 
-test('Greed renders correctly', () =>{
+    const textElement = screen.getByText("hello");
 
-    render(<Greed />)
+    expect(textElement).toBeInTheDocument();
+  });
 
-    const textElement = screen.getByText('hello')
+  test("greet renders with a name", () => {
+    render(<Greed name="calais" />);
 
-    expect(textElement).toBeInTheDocument()
-
-})
-
-test('greet renders with a name', () =>{
-    render(<Greed name='calais' />)
-
-    const textWithName =  screen.getByText('hello calais')
-    expect(textWithName).toBeInTheDocument()
-
-
-}
-)})
+    const textWithName = screen.getByText("hello calais");
+    expect(textWithName).toBeInTheDocument();
+  });
+});

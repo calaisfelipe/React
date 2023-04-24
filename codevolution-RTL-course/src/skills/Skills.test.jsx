@@ -1,63 +1,60 @@
-import { render, screen, logRoles } from '@testing-library/react'
+import { render, screen, logRoles } from "@testing-library/react";
 
-import { Skills } from './Skills'
+import { Skills } from "./Skills";
 
-const list = ['javascript', 'HTML', 'CSS' , 'React']
+const list = ["javascript", "HTML", "CSS", "React"];
 
-describe('list Tester', () => {
+describe("list Tester", () => {
+  test("skills Test", () => {
+    render(<Skills list={list} />);
 
-    test('skills Test', () => {
+    const findElements = screen.getByRole("list");
 
-        render(<Skills  list={list}   />)
+    expect(findElements).toBeInTheDocument();
+  });
 
-        const findElements = screen.getByRole('list')
+  test("Render a list of skills", () => {
+    render(<Skills list={list} />);
 
-        expect(findElements).toBeInTheDocument()
-    })
+    const listItemElements = screen.getAllByRole("listitem");
 
-    test('Render a list of skills' , () => {
-        render(<Skills  list={list}   />)
+    expect(listItemElements).toHaveLength(4);
+  });
 
-        const listItemElements = screen.getAllByRole('listitem')
+  test("Renders Login Button", () => {
+    render(<Skills list={list} />);
 
-        expect(listItemElements).toHaveLength(4)
-    })
+    const loginButton = screen.getByRole("button", {
+      name: "Login",
+    });
+    expect(loginButton).toBeInTheDocument();
+  });
 
+  test("Start Learning button is not rendered", () => {
+    render(<Skills list={list} />);
 
-    test('Renders Login Button', () =>{
-        render(<Skills list={list}/>)
+    const startButton = screen.queryByRole("button", {
+      name: "Start Learning",
+    });
+    expect(startButton).not.toBeInTheDocument();
+  });
 
-        const loginButton = screen.getByRole('button', {
-            name:'Login'
-        })
-        expect(loginButton).toBeInTheDocument()
-    })
+  test("Start learning button is eventually displayed", async () => {
+    //const view =
+    render(<Skills list={list} />);
+    //logRoles(view.container)
 
-    test('Start Learning button is not rendered' , () =>{
-        render(<Skills list={list}/>)
+    const startLearning = await screen.findByRole(
+      "button",
+      {
+        name: "Start Learning",
+      },
+      {
+        timeout: 2000,
+      }
+    );
 
-        const startButton = screen.queryByRole('button', {
-            name:'Start Learning'
-        })
-        expect(startButton).not.toBeInTheDocument()
-    })
-
-    test('Start learning button is eventually displayed' , async ()=>{
-
-         //const view = 
-        render(<Skills list={list}/>)
-        //logRoles(view.container)
-
-        const startLearning = await screen.findByRole('button', {
-            name: 'Start Learning'
-        },{
-            timeout:2000
-        })
-
-        screen.debug()
-        expect(startLearning).toBeInTheDocument()
-
-
-    })
-
-})
+    screen.debug();
+    expect(startLearning).toBeInTheDocument();
+  });
+});
