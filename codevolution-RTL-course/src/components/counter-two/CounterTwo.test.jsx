@@ -22,18 +22,21 @@ describe('CounterTwo tests', () =>{
         const decrementHandler = jest.fn()
 
         render(<CounterTwo count={0} 
-            handleInclement={incrementHandler} 
+            handleIncrement={incrementHandler} 
             handleDecrement={decrementHandler} />)
 
-        const incrementButton = screen.getByRole('button', {name: /^ / })
-        const decrementButton = screen.getByRole('button', {name: 'Decrement'})
+        const incrementButton = screen.getByRole('button',{
+            name: 'Increment'
+        })
+        const decrementButton = screen.getByRole('button',{
+            name: 'Decrement'
+        })
 
-    
         await user.click(incrementButton)
         await user.click(decrementButton)
 
-        expect(incrementButton).toHaveBeenCalledTimes(1)
-        expect(decrementButton).toHaveBeenCalledTimes(1)
+        expect(incrementHandler).toHaveBeenCalledTimes(1)
+        expect(decrementHandler).toHaveBeenCalledTimes(1)
         
 
     })

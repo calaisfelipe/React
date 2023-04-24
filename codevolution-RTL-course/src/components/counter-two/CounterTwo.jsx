@@ -1,26 +1,33 @@
 import React from 'react'
-import {Button, Stack} from '@mui/material'
+import { Button, Stack } from '@mui/material'
 
 function CounterTwo(props) {
   return (
     <div>
-        <h1>Counter Two</h1>
-        <p>{props.count}</p>
+      <h1>Counter Two</h1>
+      <p>{props.count}</p>
 
-        <Stack spacing={2} direction='row'>
+      <Stack spacing={2} direction='row'>
 
-        {props.handleIncrement && <Button onClick={props.handleIncrement} color='success'
-        variant='contained'>
-            Increment</Button>}
+        {props.handleIncrement && 
+        <Button 
+        onClick={props.handleIncrement}
+        variant='contained'
+        color='success'>
 
-        {props.handleDecrement && <Button 
-        onClick={props.handleDecrement}
-         color='error'
-         variant='contained'>
+          Increment</Button>}
 
-            Decrement</Button>}
-            
-            </Stack>
+        {props.handleDecrement && <Button
+          onClick={props.handleDecrement}
+          variant='contained'
+          color='error'
+
+
+        >
+
+          Decrement</Button>}
+
+      </Stack>
 
 
     </div>

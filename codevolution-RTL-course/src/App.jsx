@@ -6,6 +6,7 @@ import { ProviderTheme } from './providers/AppProviders'
 import MuiMode from './Mui/MuiMode'
 import CounterTwo from './components/counter-two/CounterTwo'
 import { useCounter } from './hooks/useCounter'
+import Users from './components/users/Users'
 
 function App() {
 
@@ -16,6 +17,8 @@ function App() {
       <div className='App'>
           <MuiMode />
           <CounterTwo count={count} handleIncrement={increment} handleDecrement={decrement} />
+
+          <Users />
 
 
 
